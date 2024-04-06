@@ -273,8 +273,8 @@
 
         if (!hasError) {
             const params = {
-                chat_id: '-4008291065',
-                text: `Новая регистрация: \nИмя: ${fullName.value}\\nТелефон: ${phone.value}\\n`
+                chat_id: '-4102255978',
+                text: `Новая регистрация: \nИмя: ${fullName.value}\nТелефон: ${phone.value}\n`
             };
 
             console.log(params)
@@ -296,9 +296,9 @@
 
     async function telegramQuery(method, params, full_response = false) {
         // Замените на ваш Telegram bot_id
-        const bot_id = 'YOUR_BOT_ID';
+        const bot_id = '6797358607';
         // Замените на ваш Telegram bot_token
-        const bot_token = 'YOUR_BOT_TOKEN';
+        const bot_token = 'AAF40S40TiMG1qDVoNGYWyCUNpzs479cZno';
         const url = `https://api.telegram.org/bot${bot_id}:${bot_token}/${method}`;
 
         try {
