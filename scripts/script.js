@@ -8,6 +8,8 @@
         slidesToShow: 1,
         adaptiveHeight: true,
         adaptiveWidth: true,
+        fade: true, 
+        speed: 500,
         responsive: [
             {
                 breakpoint: 1200,
