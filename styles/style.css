@@ -422,6 +422,7 @@ body {
     align-items: center;
     text-align: center;
     width: 325px;
+    cursor: pointer;
 
 }
 
@@ -486,6 +487,7 @@ body {
     border-radius: 8px;
     font-size: 24px;
     font-family: MontserratSemiBold, sans-serif;
+    cursor: pointer;
 }
 
 .faq .container {
@@ -596,7 +598,7 @@ body {
     bottom: 0;
     background: rgb(0, 0, 0, 0.6);
     z-index: 200;
-    /*display: none;*/
+    display: none;
 }
 
 .popup {
@@ -617,6 +619,7 @@ body {
     position: absolute;
     right: 40px;
     top: 20px;
+    cursor: pointer;
 }
 
 .popup-input {

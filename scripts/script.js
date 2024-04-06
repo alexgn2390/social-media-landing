@@ -8,6 +8,8 @@
         slidesToShow: 1,
         adaptiveHeight: true,
         adaptiveWidth: true,
+        fade: true,
+        speed: 500,
         responsive: [
             {
                 breakpoint: 1200,
@@ -44,6 +46,8 @@
         slidesToShow: 1,
         adaptiveHeight: true,
         adaptiveWidth: true,
+        fade: true,
+        speed: 500,
         responsive: [
             {
                 breakpoint: 1200,
@@ -115,13 +119,6 @@
 
 
 
-
-
-
-
-
-
-
     $('#home').click(function () {
         $('#header-menu').hide()
     })
@@ -180,6 +177,7 @@
     const popupClose = document.getElementById('popup-close')
     const ownButton = document.getElementById('own-button')
     const popupBackground = document.getElementById('popup-background')
+    const popup = document.getElementById('popup')
 
 
     $(document).ready(function () {
@@ -210,23 +208,29 @@
         }
     });
 
-
-    document.addEventListener("click", function (e) {
-        if (popupBackground.contains(e.target)) {
-            popupBackground.style.display = 'none';
-        }
-    });
-
-
-
     popupBackground.style.display = 'none'
     popupClose.onclick = () => {
         popupBackground.style.display = 'none'
     }
 
+
     ownButton.onclick = () => {
         popupBackground.style.display = 'block'
     }
+
+    document.querySelectorAll('.button').forEach(button => {
+        button.onclick = () => {
+            popupBackground.style.display = 'block'
+        }
+    })
+
+
+
+    $(document).on("click", function (e) {
+        if (popupBackground.closest(e.target).length) {
+            popupBackground.hide();
+        }
+    });
 
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -236,23 +240,18 @@
             let formattedPhone;
 
             if (phone.length < 2) {
-                formattedPhone = '+7';
+                formattedPhone = '+1';
             } else if (phone.length < 5) {
-                formattedPhone = '+7 (' + phone.substring(1);
+                formattedPhone = '+1 (' + phone.substring(1);
             } else if (phone.length < 8) {
-                formattedPhone = '+7 (' + phone.substring(1, 4) + ') ' + phone.substring(4);
+                formattedPhone = '+1 (' + phone.substring(1, 4) + ') ' + phone.substring(4);
             } else {
-                formattedPhone = '+7 (' + phone.substring(1, 4) + ') ' + phone.substring(4, 7) + '-' + phone.substring(7, 9) + phone.substring(9, 11);
+                formattedPhone = '+1 (' + phone.substring(1, 4) + ') ' + phone.substring(4, 7) + '-' + phone.substring(7, 9) + phone.substring(9, 11);
             }
             event.target.value = formattedPhone;
         });
     });
 
-    document.querySelectorAll('.button').forEach(button => {
-        button.onclick = () => {
-            popupBackground.style.display = 'block'
-        }
-    })
 
 
     popupButton.onclick = () => {
@@ -275,8 +274,7 @@
         if (!hasError) {
             const params = {
                 chat_id: '-4008291065',
-                text: 'Новая',
-                регистрация: `\nИмя: ${fullName.value}\nТелефон: ${phone.value}\n`
+                text: `Новая регистрация: \nИмя: ${fullName.value}\\nТелефон: ${phone.value}\\n`
             };
 
             console.log(params)
@@ -322,5 +320,20 @@
         return JSON.stringify(params);
     }
 
+    $('#prevButton').click(function(){
+        $('.slider').slick('slickPrev');
+    });
+
+    $('#nextButton').click(function(){
+        $('.slider').slick('slickNext');
+    });
+
+    $('#prevButton-2').click(function(){
+        $('.slider-2').slick('slickPrev');
+    });
+
+    $('#nextButton-2').click(function(){
+        $('.slider-2').slick('slickNext');
+    });
 
 })()
