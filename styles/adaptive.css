@@ -134,13 +134,15 @@
     }
 
     .main-image-main {
-        max-width: 115%;
+        max-width: 92%;
         position: relative;
         top: -10px;
+
     }
 
     .main-description {
         max-width: none;
+        margin-top: 55px;
     }
 
     .main-description-rectangle {

@@ -48,8 +48,12 @@ body {
 
 .header {
     padding: 24px 0 24px 0;
-
     border-bottom: 1px solid #CBCBCB;
+}
+
+.header-logo {
+    font-size: 16px;
+    font-family: Inter, sans-serif;
 }
 
 .header-fixed {
@@ -115,25 +119,20 @@ body {
     justify-content: center;
 }
 
-
-.main-image-img {
-    position: absolute;
-    left: -13%;
-    top: -21%;
-    transform: translate(0%, 0%);
-    z-index: -1;
+.main-image-main {
+max-width: 120%;
 }
 
+
 .main-description {
-    max-width: 556px;
+    max-width: 475px;
+    margin-top: 110px;
 }
 
 
 .main-description-title {
     font-size: 48px;
-    margin-top: 50px;
     margin-bottom: 24px;
-    max-width: 480px;
     word-wrap: break-word;
     font-family: var(--font-family-title);
 

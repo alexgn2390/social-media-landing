@@ -77,6 +77,9 @@
     });
 
 
+
+
+
     const accordionHeaders = document.querySelectorAll('.accordion-header');
     const accordionItems = document.querySelectorAll('.accordion-item');
 
