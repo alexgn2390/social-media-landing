@@ -97,10 +97,9 @@ body {
 
 .menu-item a:hover {
     border-bottom: 4px solid #FFCA41;
-
 }
 
-.header-menu-burger {
+.header-2 {
     display: none;
 }
 
@@ -330,8 +329,9 @@ max-width: 120%;
 
 .success-items {
     margin-top: 120px;
-    margin-bottom: 120px;
+    margin-bottom: 103px;
     margin-left: 80px;
+    max-width: 478px;
 }
 
 .success-item {
@@ -400,7 +400,7 @@ max-width: 120%;
     font-family: var(--font-family-title);
     /*max-width: 70%;*/
     text-align: center;
-    margin-bottom: 92px;
+    margin-bottom: 55px;
 }
 
 .success-wrapper-rectangle {
@@ -449,9 +449,7 @@ max-width: 120%;
     margin-bottom: 0;
 }
 
-.success-items {
-    max-width: 478px;
-}
+
 
 
 .own .container {

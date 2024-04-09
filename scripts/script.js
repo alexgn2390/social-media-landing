@@ -122,56 +122,88 @@
 
 
 
-    $('#home').click(function () {
-        $('#header-menu').hide()
-    })
-
 
     $('#service').click(function (event) {
         event.preventDefault();
         $('.service-details')[0].scrollIntoView({behavior: "smooth"});
-        $('#header-menu').hide()
+        // $('#header-menu').hide()
     });
 
     $('#service').click(function (event) {
         event.preventDefault();
         $('.service-details-2')[0].scrollIntoView({behavior: "smooth"});
-        $('#header-menu').hide()
     });
 
     $('#experience').click(function (event) {
         event.preventDefault();
         $('.experience')[0].scrollIntoView({behavior: "smooth"});
-        $('#header-menu').hide()
+
     });
     $('#success').click(function (event) {
         event.preventDefault();
         $('.success')[0].scrollIntoView({behavior: "smooth"});
-        $('#header-menu').hide()
     });
 
     $('#success').click(function (event) {
         event.preventDefault();
         $('.success-2')[0].scrollIntoView({behavior: "smooth"});
-        $('#header-menu').hide()
     });
 
     $('#faq').click(function (event) {
         event.preventDefault();
         $('.faq')[0].scrollIntoView({behavior: "smooth"});
-        $('#header-menu').hide()
+
     });
     $('#contacts').click(function (event) {
         event.preventDefault();
         $('.footer')[0].scrollIntoView({behavior: "smooth"});
-        $('#header-menu').hide()
+
     });
 
-    $('#home').click(function (event) {
+    $('#home-2').click(function (event) {
         event.preventDefault();
         $('.main')[0].scrollIntoView({behavior: "smooth"});
-        $('#header-menu').hide()
     });
+
+
+    $('#service-2').click(function (event) {
+        event.preventDefault();
+        $('.service-details')[0].scrollIntoView({behavior: "smooth"});
+        // $('#header-menu').hide()
+    });
+
+    $('#service-2').click(function (event) {
+        event.preventDefault();
+        $('.service-details-2')[0].scrollIntoView({behavior: "smooth"});
+    });
+
+    $('#experience-2').click(function (event) {
+        event.preventDefault();
+        $('.experience')[0].scrollIntoView({behavior: "smooth"});
+
+    });
+    $('#success-2').click(function (event) {
+        event.preventDefault();
+        $('.success')[0].scrollIntoView({behavior: "smooth"});
+    });
+
+    $('#success-2').click(function (event) {
+        event.preventDefault();
+        $('.success-2')[0].scrollIntoView({behavior: "smooth"});
+    });
+
+    $('#faq-2').click(function (event) {
+        event.preventDefault();
+        $('.faq')[0].scrollIntoView({behavior: "smooth"});
+
+    });
+    $('#contacts-2').click(function (event) {
+        event.preventDefault();
+        $('.footer')[0].scrollIntoView({behavior: "smooth"});
+
+    });
+
+
 
 
     const fullName = document.getElementById('full-name')
@@ -198,14 +230,18 @@
 
     });
 
-    $('#burger').click(function () {
-        $('#header-menu').toggle(); // Переключение видимости меню
+
+
+
+    $('#burger-2').click(function () {
+        $('#header-menu-2').toggle(); // Переключение видимости меню
     });
 
 
 
+
     $(document).on("click", function (e) {
-        let headerMenu = $('#header-menu')
+        let headerMenu = $('#header-menu-2')
         if (headerMenu.closest(e.target).length) {
             headerMenu.hide();
         }
