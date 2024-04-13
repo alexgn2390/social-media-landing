@@ -321,9 +321,9 @@
 
     async function telegramQuery(method, params, full_response = false) {
         // Замените на ваш Telegram bot_id
-        const bot_id = '6797358607';
+        const bot_id = '';
         // Замените на ваш Telegram bot_token
-        const bot_token = 'AAF40S40TiMG1qDVoNGYWyCUNpzs479cZno';
+        const bot_token = '';
         const url = `https://api.telegram.org/bot${bot_id}:${bot_token}/${method}`;
 
         try {
