@@ -77,50 +77,51 @@
     });
 
 
-
-
-
     const accordionHeaders = document.querySelectorAll('.accordion-header');
     const accordionItems = document.querySelectorAll('.accordion-item');
 
     accordionHeaders.forEach(header => {
         header.addEventListener('click', () => {
             const accordionItem = header.parentElement;
-            const accordionContent = accordionItem.querySelector('.accordion-content');
-            const plusIcon = header.querySelector('.accordion-header-plus');
-            const minusIcon = header.querySelector('.accordion-header-minus');
+            // Проверяем, что элемент был найден
+            if (accordionItem) {
+                const accordionContent = accordionItem.querySelector('.accordion-content');
+                const plusIcon = header.querySelector('.accordion-header-plus');
+                const minusIcon = header.querySelector('.accordion-header-minus');
 
-            // Закрытие всех аккордеонов, кроме текущего
-            accordionItems.forEach(item => {
-                if (item !== accordionItem) {
-                    const content = item.querySelector('.accordion-content');
-                    const plusIconOther = item.querySelector('.accordion-header-plus');
-                    const minusIconOther = item.querySelector('.accordion-header-minus');
-                    content.style.maxHeight = "0";
-                    setTimeout(() => {
-                        content.classList.remove('active');
-                    }, 300);
-                    plusIconOther.style.display = 'block';
-                    minusIconOther.style.display = 'none';
+                // Закрытие всех аккордеонов, кроме текущего
+                accordionItems.forEach(item => {
+                    if (item !== accordionItem) {
+                        const content = item.querySelector('.accordion-content');
+                        const plusIconOther = item.querySelector('.accordion-header-plus');
+                        const minusIconOther = item.querySelector('.accordion-header-minus');
+                        // Проверяем, что элементы были найдены
+                        if (content && plusIconOther && minusIconOther) {
+                            content.style.maxHeight = "0";
+                            setTimeout(() => {
+                                content.classList.remove('active');
+                            }, 300);
+                            plusIconOther.style.display = 'block';
+                            minusIconOther.style.display = 'none';
+                        }
+                    }
+                });
+                if (accordionContent) {
+                    accordionContent.classList.toggle('active');
+                    // Открытие/закрытие текущего аккордеона
+                    if (accordionContent.classList.contains('active')) {
+                        accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+                        plusIcon.style.display = 'none';
+                        minusIcon.style.display = 'block';
+                    } else {
+                        accordionContent.style.maxHeight = "0";
+                        plusIcon.style.display = 'block';
+                        minusIcon.style.display = 'none';
+                    }
                 }
-            });
-            accordionContent.classList.toggle('active');
-            // Открытие/закрытие текущего аккордеона
-            if (accordionContent.classList.contains('active')) {
-                accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
-                plusIcon.style.display = 'none';
-                minusIcon.style.display = 'block';
-            } else {
-                accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
-                plusIcon.style.display = 'block';
-                minusIcon.style.display = 'none';
             }
-
-
         });
     });
-
-
 
 
     $('#service').click(function (event) {
@@ -204,16 +205,26 @@
     });
 
 
-
-
     const fullName = document.getElementById('full-name')
     const phone = document.getElementById('phone')
     const popupButton = document.getElementById('popup-button')
     const popupClose = document.getElementById('popup-close')
     const ownButton = document.getElementById('own-button')
     const popupBackground = document.getElementById('popup-background')
-    const popup = document.getElementById('popup')
+    // const popup = document.getElementById('popup')
+    const postMain = document.getElementById('post-main')
+    const elevateButton = document.getElementById('elevate-button')
 
+
+    elevateButton.addEventListener('click', function () {
+        popupBackground.style.display = 'block'
+    })
+    postMain.addEventListener('click', function () {
+        popupBackground.style.display = 'block'
+    })
+    ownButton.addEventListener('click', function () {
+        popupBackground.style.display = 'block'
+    })
 
     $(document).ready(function () {
         let header = $("#header");
@@ -231,13 +242,9 @@
     });
 
 
-
-
     $('#burger-2').click(function () {
         $('#header-menu-2').toggle(); // Переключение видимости меню
     });
-
-
 
 
     $(document).on("click", function (e) {
@@ -247,29 +254,10 @@
         }
     });
 
-    popupBackground.style.display = 'none'
+    // popupBackground.style.display = 'none'
     popupClose.onclick = () => {
         popupBackground.style.display = 'none'
     }
-
-
-    ownButton.onclick = () => {
-        popupBackground.style.display = 'block'
-    }
-
-    document.querySelectorAll('.button').forEach(button => {
-        button.onclick = () => {
-            popupBackground.style.display = 'block'
-        }
-    })
-
-
-
-    $(document).on("click", function (e) {
-        if (popupBackground.closest(e.target).length) {
-            popupBackground.hide();
-        }
-    });
 
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -290,7 +278,6 @@
             event.target.value = formattedPhone;
         });
     });
-
 
 
     popupButton.onclick = () => {
@@ -326,7 +313,6 @@
 
     }
 
-
     function isValidPhone(phone) {
         let phoneRegex = /^\+?(\d{1,3})?[-.\s]?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/;
         return phoneRegex.test(phone);
@@ -359,19 +345,19 @@
         return JSON.stringify(params);
     }
 
-    $('#prevButton').click(function(){
+    $('#prevButton').click(function () {
         $('.slider').slick('slickPrev');
     });
 
-    $('#nextButton').click(function(){
+    $('#nextButton').click(function () {
         $('.slider').slick('slickNext');
     });
 
-    $('#prevButton-2').click(function(){
+    $('#prevButton-2').click(function () {
         $('.slider-2').slick('slickPrev');
     });
 
-    $('#nextButton-2').click(function(){
+    $('#nextButton-2').click(function () {
         $('.slider-2').slick('slickNext');
     });
 
